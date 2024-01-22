@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Random Quote Machine</title>
+    <script src="./quotes.js"></script>
+    <script>
+      
+     
+
+
+      window.onload = init;
+      function init() {
+        generateQuote();
+      }
+
+      function generateQuote() {
+        let quoteSize = QUOTEBANK.length; // provide the size of the array
+
+        //getting a random index
+        let randomIndex = Math.floor(Math.random() * quoteSize);
+
+        let randomQuoteData = QUOTEBANK[randomIndex];
+
+        // let twitterLink =
+        //   "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22Ask%20and%20it%20will%20be%20given%20to%20you%3B%20search%2C%20and%20you%20will%20find%3B%20knock%20and%20the%20door%20will%20be%20opened%20for%20you.%22%20Jesus";
+
+        // document.getElementById("tweet-quote").href = twitterLink; // directed to the page
+        document.getElementById("text").innerHTML = randomQuoteData.quote;
+        document.getElementById("author").innerHTML = randomQuoteData.author;
+      }
+    </script>
+    <style>
+      /* * {
+        font-size: 1.5rem;
+        margin: 20px 20px 20px 20px;
+        text-align: center;
+      } */
+      #quote-box{
+        width: 500px;
+        margin: 0 auto;
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random_Quote_Machine</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-8 offset-md-2"></div>
+    <wrapper id="quote-box" >
+      <div class="card bg-info text-white">
+        <div class="card-header">
+          <p class="text-center text-uppercase fw-bold">Random Quote Machine</p>
+        </div>
+        <div class="card-body">
+          <div class="" id="text"></div>
+          <p class="card-text">
+            <div class="" id="author"></div>
+          </p>
+          <button
+            id="new-quote"
+            onclick="generateQuote();"
+            class="btn btn-block btn-success text-dark"
+          >
+            New Quote
+          </button>
+          <a
+          href="twitter.com/intent/tweet"
+          target="_blank"
+          class="btn btn-block btn-primary"
+          id="tweet-quote"
+          >Tweet Quote</a
+        </div>
+      </div>
+   
+      
+    </wrapper>
+    </div>
+  </div>
+</div>
+    <!--include js files from the freecodecamp project-->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
